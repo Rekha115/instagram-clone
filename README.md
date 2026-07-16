@@ -156,9 +156,6 @@ cd instagram-clone
 
 ---
 
-## 📸 Screenshots & UI
-
-*(Add screenshots of your local running instance here)*
 
 | Feed Layout | Reels View |
 | :---: | :---: |
@@ -175,4 +172,4 @@ cd instagram-clone
 ---
 
 ## 👤 Author
-* **Your Name / GitHub Profile** - [GitHub](https://github.com/your-username)
+* **Your Name** - [Rekha]
