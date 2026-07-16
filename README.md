@@ -156,20 +156,3 @@ cd instagram-clone
 
 ---
 
-
-| Feed Layout | Reels View |
-| :---: | :---: |
-| ![Feed](https://via.placeholder.com/400x300?text=Instagram+Clone+Feed) | ![Reels](https://via.placeholder.com/400x300?text=Instagram+Clone+Reels) |
-
----
-
-## 🔮 Future Improvements
-* **Real-time Messaging**: Direct chats and messaging using WebSockets (`socket.io`).
-* **Stories View**: Expiring 24-hour video/photo story circles.
-* **Enhanced Video Compression**: Client-side transcoding before uploading.
-* **Full Text Search**: Advanced fuzzy-search profiles and captions.
-
----
-
-## 👤 Author
-* **Your Name** - [Rekha]
