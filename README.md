@@ -51,7 +51,7 @@ instagram-clone/
 │   ├── .env.example        # Reference environment variables
 │   ├── seed.js             # Local database populator/seeder
 │   └── server.js           # Express main server entrypoint
-├── temp_frontend/
+├── frontend/
 │   ├── public/             # Static public assets
 │   ├── src/
 │   │   ├── api/            # API request clients (Axios instances)
@@ -93,8 +93,8 @@ RATE_LIMIT_WINDOW_MS=900000
 RATE_LIMIT_MAX=300
 ```
 
-### Frontend Configuration (`temp_frontend/.env`)
-Create a `.env` file in the `temp_frontend/` directory:
+### Frontend Configuration (`frontend/.env`)
+Create a `.env` file in the `frontend/` directory:
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
@@ -138,7 +138,7 @@ cd instagram-clone
 ### Step 3: Configure and Start the Frontend
 1. Open a new terminal window and navigate to the frontend folder:
    ```bash
-   cd temp_frontend
+   cd frontend
    ```
 2. Install dependencies:
    ```bash
