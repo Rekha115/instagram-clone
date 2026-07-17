@@ -25,7 +25,7 @@ app.use(helmet());
 // CORS - allow the frontend origin with credentials for cookie-based auth
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: true,
     credentials: true,
   })
 );
