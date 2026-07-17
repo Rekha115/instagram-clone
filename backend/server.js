@@ -22,10 +22,34 @@ const app = express();
 // Security headers
 app.use(helmet());
 
-// CORS - allow the frontend origin with credentials for cookie-based auth
+// CORS - allow specific origins with credentials for cookie-based auth
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'http://localhost:5173',
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: true,
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, etc.)
+      if (!origin) return callback(null, true);
+
+      const isAllowed = allowedOrigins.some((allowed) => {
+        if (allowed === origin) return true;
+        // Support Vercel preview deployments dynamically if CLIENT_URL is a vercel app
+        if (allowed.includes('.vercel.app') && origin.endsWith('.vercel.app')) {
+          return true;
+        }
+        return false;
+      });
+
+      // Additionally, allow all vercel.app domains and localhost during development or fallback
+      if (isAllowed || origin.endsWith('.vercel.app') || process.env.NODE_ENV !== 'production') {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
   })
 );

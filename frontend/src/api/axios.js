@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 // The backend (server.js) mounts everything under /api and reads
-// CLIENT_URL for CORS. Default matches backend's default PORT=5000.
-const API_URL = import.meta.env.VITE_API_URL || 'https://instagram-clone-xd9c.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://instagram-clone-1-m7gj.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,

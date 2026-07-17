@@ -6,8 +6,10 @@ import Follow from './models/Follow.js';
 import Comment from './models/Comment.js';
 import Notification from './models/Notification.js';
 import SavedPost from './models/SavedPost.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const MONGO_URI = 'mongodb://localhost:27017/instagram';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/instagram';
 
 async function seed() {
   try {
