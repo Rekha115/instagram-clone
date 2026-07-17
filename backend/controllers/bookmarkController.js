@@ -20,6 +20,7 @@ export const savePost = asyncHandler(async (req, res) => {
   await User.findByIdAndUpdate(req.user._id, { $addToSet: { savedPosts: post._id } });
 
   res.status(200).json({ success: true, message: 'Post saved' });
+  
 });
 
 /**

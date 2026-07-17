@@ -157,6 +157,19 @@ async function seed() {
         },
       ],
     });
+    const reel3 = await Post.create({
+      author: jane._id,
+      caption: 'Exploring the vibrant street art scene in Berlin! 🎨🏙️ #streetart #berlin #culture',
+      location: 'Berlin, Germany',
+      postType: 'reel',
+      media: [
+        {
+          url: 'https://www.w3schools.com/html/movie.mp4',
+          publicId: 'mock_reel_streetart',
+          type: 'video',
+        },
+      ],
+    });
 
     console.log('Sample posts and reels created successfully.');
 
@@ -176,6 +189,14 @@ async function seed() {
     });
     reel1.comments.push(comment2._id);
     await reel1.save();
+
+    const comment3 = await Comment.create({
+      post: reel3._id,
+      author: travel._id,
+      text: 'These street art pieces are amazing! Berlin always has such a vibrant creative scene.',
+    });
+    reel3.comments.push(comment3._id);
+    await reel3.save();
 
     console.log('Sample comments added.');
     console.log('--- SEEDING COMPLETED SUCCESSFULLY ---');
